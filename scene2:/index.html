@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Voice-Activated Burst Scene</title>
+
+  <!-- p5.js -->
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.min.js"></script>
+  <!-- Your sketch -->
+  <script src="sketch.js" defer></script>
+
+  <style>
+    html, body { margin: 0; height: 100%; background: #fff; color: #111; font-family: system-ui, sans-serif; }
+    #ui {
+      position: fixed; left: 12px; top: 12px; display: flex; gap: 8px; align-items: center;
+      padding: 8px 10px; background: rgba(0,0,0,0.05); border: 1px solid rgba(0,0,0,0.15);
+      border-radius: 10px; backdrop-filter: blur(6px);
+    }
+    #mic { width: 10px; height: 10px; border-radius: 50%; background: #f43; box-shadow: 0 0 0 0 rgba(255,68,51,0.7); transition: box-shadow 240ms ease; }
+    #mic.listening { box-shadow: 0 0 0 8px rgba(255,68,51,0.08); }
+    #status { font-size: 13px; opacity: 0.9; }
+    #hint { font-size: 12px; opacity: 0.7; }
+    button {
+      background: #1e1e26; color: #eaeaea; border: 1px solid rgba(255,255,255,0.15);
+      padding: 6px 10px; border-radius: 8px; cursor: pointer; font-size: 12px;
+    }
+    button:hover { background: #252533; }
+  </style>
+</head>
+<body>
+  <div id="ui">
+    <div id="mic"></div>
+    <div>
+      <div id="status">Speech: <span id="statusText">idle</span></div>
+      <div id="hint">Say “I’m confused.” (Also “I am confused”, “ich bin verwirrt”).</div>
+    </div>
+    <button id="toggleBtn">Start mic</button>
+    <button id="testBtn" title="Manual trigger if speech isn’t supported">Test burst</button>
+  </div>
+</body>
+</html>
