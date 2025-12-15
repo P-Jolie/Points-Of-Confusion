@@ -4,18 +4,86 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Points of Confusion</title>
+
   <style>
-    html,body{margin:0;height:100%;background:#fff;font:16px system-ui}
-    .wrap{min-height:100dvh;display:grid;place-items:center;padding:32px}
-    .box{border:1px solid #000;border-radius:16px;padding:24px;max-width:520px;width:100%}
-    a{display:block;border:1px solid #000;border-radius:12px;padding:12px 14px;margin-top:12px;text-decoration:none;color:#000}
-    a:hover{background:#000;color:#fff}
+    /* -------- base -------- */
+    html, body {
+      margin: 0;
+      height: 100%;
+      background: #ffffff;
+      font: 16px/1.35 ui-sans-serif, system-ui, -apple-system,
+            "Helvetica Neue", Arial, sans-serif;
+      color: #000;
+    }
+
+    /* -------- layout -------- */
+    .wrap {
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: clamp(12px, 3vw, 32px);
+    }
+
+    .box {
+      border: 1px solid #000;
+      border-radius: 16px;
+      padding: 24px;
+      max-width: 520px;
+      width: 100%;
+    }
+
+    /* -------- heading -------- */
+    .title {
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    /* -------- button theme -------- */
+    :root {
+      --btn-bg: #ffffff;
+      --btn-text: #000000;
+      --btn-border: #000000;
+
+      /* hover colors – change THESE only if you want */
+      --btn-hover-bg: #7EB2DD;
+      --btn-hover-text: #ffffff;
+      --btn-hover-border: #445E93;
+    }
+
+    /* -------- buttons -------- */
+    a {
+      display: block;
+      margin-top: 12px;
+      padding: 12px 14px;
+
+      border: 1px solid var(--btn-border);
+      border-radius: 12px;
+
+      text-decoration: none;
+      color: var(--btn-text);
+      background: var(--btn-bg);
+
+      transition:
+        background 160ms ease,
+        color 160ms ease,
+        border-color 160ms ease,
+        transform 120ms ease;
+    }
+
+    a:hover {
+      background: var(--btn-hover-bg);
+      color: var(--btn-hover-text);
+      border-color: var(--btn-hover-border);
+      transform: translateY(-1px);
+    }
   </style>
 </head>
+
 <body>
   <div class="wrap">
     <div class="box">
-      <div style="font-size:18px;margin-bottom:8px;">Points of Confusion</div>
+      <div class="title">Points of Confusion</div>
+
       <a href="scene1/">Scene 1</a>
       <a href="scene2/">Scene 2</a>
     </div>
